@@ -13,7 +13,7 @@ pipeline {
         sh '''
           sudo usermod -aG docker ${USER}
           su -s ${USER}
-          echo $PASSWORD_CREDENTIALS
+          -s $PASSWORD_CREDENTIALS
         '''
         sh 'docker build -t ctmrc/docker-jenkins:latest .'
       }
