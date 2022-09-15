@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t darinpope/dp-alpine:latest .'
+        sh 'docker build -t ctmrc/docker-jenkins:latest .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push darinpope/dp-alpine:latest'
+        sh 'docker push ctmrc/docker-jenkins:latest'
       }
     }
   }
