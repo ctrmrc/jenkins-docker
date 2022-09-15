@@ -5,16 +5,10 @@ pipeline {
   }
   environment {
     DOCKERHUB_CREDENTIALS = credentials('docker-jenkins-sony_vaio')
-    PASSWORD_CREDENTIALS = credentials('12345')
   }
   stages {
     stage('Build') {
       steps {
-        sh '''
-          sudo usermod -aG docker ${USER}
-          su -s ${USER}
-          -s $PASSWORD_CREDENTIALS
-        '''
         sh 'docker build -t ctmrc/docker-jenkins:latest .'
       }
     }
