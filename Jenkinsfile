@@ -4,7 +4,7 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('docker-jenkins-sony_vaio')
+    DOCKERHUB_CREDENTIALS = credentials('12345')
   }
   stages {
     stage('Build') {
